@@ -343,3 +343,8 @@ body{
     transform: rotateY(0deg) scale(1);
   }
 }
+@keyframes cta-echo {
+  0%   { transform: scale(1);    opacity: 0.75; }
+  99%  { transform: scale(1.25); opacity: 0;    }
+  100% { transform: scale(1);    opacity: 0;    }
+}

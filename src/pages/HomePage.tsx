@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Badge } from "../../components/home/ui/badge";
-import { Button } from "../../components/home/ui/button";
-import { Card, CardContent } from "../../components/home/ui/card";
-import { WaitlistModal } from "../../components/home/WaitlistModal";
-import { Footer } from "../../components/home/Footer";
-import { PointerTracker } from "../../components/home/PointerTracker";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { WaitlistModal } from "@/components/home/WaitlistModal";
+import { Footer } from "@/components/home/Footer";
+import { PointerTracker } from "@/components/home/PointerTracker";
 import { Link } from "react-router-dom";
-import GridLayout from "../../components/GridLayout";
+import HeroShowcase from "@/components/home/HeroShowcase";
 
 export const HomePage = (): JSX.Element => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
@@ -75,15 +75,15 @@ export const HomePage = (): JSX.Element => {
                   <div className="flex flex-col items-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
                     {/* Feature badge */}
                     <Badge className="inline-flex items-center justify-center gap-3 px-3.5 py-2 relative flex-[0_0_auto] rounded-[100px] border border-solid border-accent-dark-brown shadow-[inset_0px_0px_22px_rgba(var(--accent-orange-dark-rgb),0.4)] backdrop-blur-md backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(12px)_brightness(100%)] [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,0)_0%,rgba(255,255,255,0.01)_85%)] animate-fade-in-up animate-delay-200">
-                      <div className="relative w-6 h-6">
+                      {/* <div className="relative w-6 h-6">
                         <div className="relative h-6">
                           <img
-                            className="absolute w-[55px] h-[50px] -top-3 left-[03px]"
+                            className="absolute w-[50px] h-[50px]"
                             alt="Icon"
-                            src="/icon.png"
-                          />
+                            src=""
+                          /> 
                         </div>
-                      </div>
+                      </div> */}
 
                       <div className="relative w-fit [font-family:'Instrument_Sans',Helvetica] font-medium text-gray-97 text-[15px] tracking-[0] leading-[normal] whitespace-nowrap">
                         Introducing Our Latest Features
@@ -158,7 +158,7 @@ export const HomePage = (): JSX.Element => {
                   <img
                     className="w-full h-full object-cover rounded-[18px] animate-fade-in-scale animate-delay-800"
                     alt="Image"
-                    src="https://ranjanshu.com/docs.png"
+                    src="/docs.png"
                   />
 
                   <div
@@ -235,7 +235,7 @@ export const HomePage = (): JSX.Element => {
                     </div>
 
                     <h1 className="absolute w-[67px] h-[15px] top-[10px] left-[51px] text-white font-bold">
-                      StellerUI
+                      StellarUI
                     </h1>
                   </div>
 
@@ -283,7 +283,7 @@ export const HomePage = (): JSX.Element => {
       </div>
       {/* Components Display Section*/ }
       <div className="w-full">
-        <GridLayout/>
+        <HeroShowcase/>
         </div>              
 
       {/* Footer */}
