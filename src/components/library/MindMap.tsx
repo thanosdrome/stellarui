@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo } from "react";
 
 // Boxy layout: square hub in the center, nodes stacked in two columns,
 // joined by right-angle (Manhattan) traces like a schematic.
@@ -11,14 +11,14 @@ const ROWS = [60, 177, 293, 410];
 const GAP = 48; // gap between a label and where its trace begins
 
 const LABELS = [
-  'Components',
-  'React',
-  'TypeScript',
-  'Tailwind',
-  'Animations',
-  'Accessible',
-  'Dark Mode',
-  'Zero-Config',
+  "Components",
+  "React",
+  "TypeScript",
+  "Tailwind",
+  "Animations",
+  "Accessible",
+  "Dark Mode",
+  "Zero-Config",
 ];
 
 interface MindNode {
@@ -32,7 +32,9 @@ interface MindNode {
 
 export const MindMap: React.FC = () => {
   const reduced = useMemo(
-    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     [],
   );
 
@@ -153,10 +155,30 @@ export const MindMap: React.FC = () => {
             stroke="#cd5a25"
             strokeWidth={1.5}
           >
-            <animate attributeName="x" values={`${HUB.x - half};${HUB.x - half - 20}`} dur="3s" repeatCount="indefinite" />
-            <animate attributeName="y" values={`${HUB.y - half};${HUB.y - half - 20}`} dur="3s" repeatCount="indefinite" />
-            <animate attributeName="width" values={`${HUB.size};${HUB.size + 40}`} dur="3s" repeatCount="indefinite" />
-            <animate attributeName="height" values={`${HUB.size};${HUB.size + 40}`} dur="3s" repeatCount="indefinite" />
+            <animate
+              attributeName="x"
+              values={`${HUB.x - half};${HUB.x - half - 20}`}
+              dur="3s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="y"
+              values={`${HUB.y - half};${HUB.y - half - 20}`}
+              dur="3s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="width"
+              values={`${HUB.size};${HUB.size + 40}`}
+              dur="3s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="height"
+              values={`${HUB.size};${HUB.size + 40}`}
+              dur="3s"
+              repeatCount="indefinite"
+            />
             <animate attributeName="opacity" values="0.45;0" dur="3s" repeatCount="indefinite" />
           </rect>
         )}
@@ -191,12 +213,12 @@ export const MindMap: React.FC = () => {
 export const MindMapExample = () => (
   <div className="space-y-4">
     <div>
-      <h3 className="text-lg font-semibold text-white mb-1">Feature mind map</h3>
-      <p className="text-sm text-zinc-400 max-w-[60ch]">
+      <h3 className="mb-1 text-lg font-semibold text-white">Feature mind map</h3>
+      <p className="max-w-[60ch] text-sm text-neutral-400">
         A schematic graph with light pulses flowing along each trace into the StellarUI hub.
       </p>
     </div>
-    <div className="h-96 rounded-xl border border-zinc-800 bg-[#0b0b0b] overflow-hidden">
+    <div className="h-96 overflow-hidden rounded-xl border border-neutral-800 bg-[#0b0b0b]">
       <MindMap />
     </div>
   </div>

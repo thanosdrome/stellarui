@@ -43,7 +43,7 @@ LLMs have statistical biases toward specific UI cliché patterns. Proactively co
 
 **Rule 2: Color Calibration**
 * **Constraint:** Max 1 Accent Color. Saturation < 80%.
-* **THE LILA BAN:** The "AI Purple/Blue" aesthetic is strictly BANNED. No purple button glows, no neon gradients. Use absolute neutral bases (Zinc/Slate) with high-contrast, singular accents (e.g. Emerald, Electric Blue, or Deep Rose).
+* **THE LILA BAN:** The "AI Purple/Blue" aesthetic is strictly BANNED. No purple button glows, no neon gradients. Use absolute neutral bases (neutral/Slate) with high-contrast, singular accents (e.g. Emerald, Electric Blue, or Deep Rose).
 * **COLOR CONSISTENCY:** Stick to one palette for the entire output. Do not fluctuate between warm and cool grays within the same project.
 
 **Rule 3: Layout Diversification**
@@ -99,7 +99,7 @@ To guarantee a premium, non-generic output, you MUST strictly avoid these common
 
 ### Visual & CSS
 * **NO Neon/Outer Glows:** Do not use default `box-shadow` glows or auto-glows. Use inner borders or subtle tinted shadows.
-* **NO Pure Black:** Never use `#000000`. Use Off-Black, Zinc-950, or Charcoal.
+* **NO Pure Black:** Never use `#000000`. Use Off-Black, neutral-950, or Charcoal.
 * **NO Oversaturated Accents:** Desaturate accents to blend elegantly with neutrals.
 * **NO Excessive Gradient Text:** Do not use text-fill gradients for large headers.
 * **NO Custom Mouse Cursors:** They are outdated and ruin performance/accessibility.

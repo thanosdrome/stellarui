@@ -16,3 +16,4 @@ A lightweight, customizable React component library built with Tailwind CSS — 
 npm install stellar-ui
 # or
 yarn add stellar-ui
+```

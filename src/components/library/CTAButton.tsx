@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { ArrowRight } from "lucide-react";
 interface CTAButtonProps {
   label?: string;
   onClick?: () => void;
@@ -10,9 +10,9 @@ interface CTAButtonProps {
 const RINGS = [0, 1, 2, 3, 4, 5];
 
 export const CTAButton: React.FC<CTAButtonProps> = ({
-  label = 'Get Started',
+  label = "Get Started",
   onClick,
-  className = '',
+  className = "",
   icon,
 }) => {
   return (
@@ -21,14 +21,14 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
       className={`group inline-flex cursor-pointer items-center border-none bg-transparent p-0 transition-transform ${className}`}
     >
       <span
-        className="relative flex items-center gap-4 overflow-visible rounded-full bg-[#222222] group-active:scale-95 group-active:shadow group-active:shadow-[#cd5a25] px-4 py-3 pr-7"
-        style={{ border: '1.5px solid #cd5a25' }}
+        className="relative flex items-center gap-4 overflow-visible rounded-full bg-[#222222] px-4 py-3 pr-7 group-active:scale-95 group-active:shadow group-active:shadow-[#cd5a25]"
+        style={{ border: "1.5px solid #cd5a25" }}
       >
         {RINGS.map((i) => (
           <span
             key={i}
-            className="animate-cta-echo pointer-events-none absolute -inset-0.5 rounded-full"
-            style={{ border: '1.5px solid #cd5a25', animationDelay: `${i * 0.5}s` }}
+            className="pointer-events-none absolute -inset-0.5 animate-cta-echo rounded-full"
+            style={{ border: "1.5px solid #cd5a25", animationDelay: `${i * 0.5}s` }}
           />
         ))}
 
@@ -43,8 +43,6 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
   );
 };
 
-export const CTAButtonExample = () => (
-  <CTAButton label="Get Started" />
-);
+export const CTAButtonExample = () => <CTAButton label="Get Started" />;
 
 export default CTAButton;

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import { useEffect, useRef } from "react";
+import { cn } from "@/lib/utils";
 
 type Cell = {
   phase: number;
@@ -27,23 +27,30 @@ export default function GridBackground({ className }: GridBackgroundProps) {
     const wrapper = wrapperRef.current;
     const canvas = canvasRef.current;
     if (!wrapper || !canvas) return;
-    const ctx = canvas.getContext('2d', { alpha: false });
+    const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
 
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // --- grid config (sizes at 100% zoom; rescaled against zoom so the
     // grid keeps the same on-screen size when the browser zooms) ---
     const BASE_CELL = 10; // spacing between dots
     const BASE_DOT = 3; // square size in px
-    const BASE_R = 18, BASE_G = 18, BASE_B = 18; // dim resting square color
+    const BASE_R = 18,
+      BASE_G = 18,
+      BASE_B = 18; // dim resting square color
     const ACCENT = { r: 160, g: 160, b: 160 }; // neutral gray accent
 
     const initialDpr = window.devicePixelRatio || 1;
     let CELL = BASE_CELL;
     let DOT = BASE_DOT;
 
-    let cols = 0, rows = 0, w = 0, h = 0, originX = 0, originY = 0;
+    let cols = 0,
+      rows = 0,
+      w = 0,
+      h = 0,
+      originX = 0,
+      originY = 0;
     let cells: Cell[] = [];
 
     function resize() {
@@ -61,8 +68,8 @@ export default function GridBackground({ className }: GridBackgroundProps) {
       if (w === 0 || h === 0) return;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       cols = Math.ceil(w / CELL) + 1;
@@ -124,7 +131,7 @@ export default function GridBackground({ className }: GridBackgroundProps) {
       if (!ctx) return;
       t += 0.016;
       const now = performance.now();
-      ctx.fillStyle = '#0b0b0b';
+      ctx.fillStyle = "#0b0b0b";
       ctx.fillRect(0, 0, w, h);
 
       const half = DOT / 2;
@@ -167,14 +174,14 @@ export default function GridBackground({ className }: GridBackgroundProps) {
   }, []);
 
   return (
-    <div ref={wrapperRef} className={cn('absolute inset-0 overflow-hidden', className)}>
+    <div ref={wrapperRef} className={cn("absolute inset-0 overflow-hidden", className)}>
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
       {/* radial vignette + faint center lift */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(13,13,13,1) 100%), radial-gradient(120% 70% at 50% 50%, rgba(24,24,24,0.35) 0%, rgba(15,15,15,0) 55%), radial-gradient(140% 120% at 50% 50%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)',
+            "linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(13,13,13,1) 100%), radial-gradient(120% 70% at 50% 50%, rgba(24,24,24,0.35) 0%, rgba(15,15,15,0) 55%), radial-gradient(140% 120% at 50% 50%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)",
         }}
       />
     </div>
