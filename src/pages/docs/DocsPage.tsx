@@ -7,7 +7,6 @@ import {
   GridDotBackgroundDemo,
   GradientCardDemo,
   XRayCardDemo,
-  MindMapDemo,
   ButtonDemo,
   CalendarDemo,
   InputDemo,
@@ -247,13 +246,6 @@ const components: ComponentEntry[] = [
     name: "CTA Button",
     description: "Animated call-to-action button with pulsing echo rings",
     component: CTAButtonDemo,
-    isNew: true,
-  },
-  {
-    id: "mind-map",
-    name: "Mind Map",
-    description: "Interactive mind map with animated glowing paths",
-    component: MindMapDemo,
     isNew: true,
   },
   {

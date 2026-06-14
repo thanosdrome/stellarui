@@ -157,8 +157,8 @@ export const HomePage = (): JSX.Element => {
                   </div>
 
                   <XRayCard
-                    baseSrc="/download.avif"
-                    revealSrc="/download.webp"
+                    baseSrc="/heroimage1.png"
+                    revealSrc="/heroImage2.png"
                     radius={250}
                     healDelay={1}
                     lag={4}
